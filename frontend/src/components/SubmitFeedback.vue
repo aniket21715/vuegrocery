@@ -37,7 +37,7 @@ export default {
       try {
         const accessToken = localStorage.getItem('access_token');
 
-        const response = await fetch('http://localhost:5000/submit-feedback', {
+        const response = await fetch('https://vuegrocery.onrender.com/submit-feedback', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
