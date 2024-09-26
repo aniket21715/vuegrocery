@@ -39,4 +39,11 @@ typing_extensions==4.7.1
 Werkzeug==2.3.6
 WTForms==3.0.1
 gunicorn
-flask_cors
+Flask-CORS
+Flask-JWT-Extended
+Werkzeug
+SQLAlchemy
+Flask-Caching
+Celery
+pandas
+Flask-Mail
