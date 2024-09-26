@@ -52,7 +52,7 @@
     try {
         const access_token = localStorage.getItem('access_token');
         // Make an API request to fetch purchase history from the backend
-        const response = await fetch('http://localhost:5000/purchase-history', {
+        const response = await fetch('https://vuegrocery.onrender.com/purchase-history', {
             headers: {
                 Authorization: `Bearer ${access_token}`, // Add your JWT token
             },
@@ -71,7 +71,7 @@
 },
 
 getImagePath(product) {
-    return product && product.image ? `http://localhost:5000/uploads/${product.image}` : 'path_to_default_image';
+    return product && product.image ? `https://vuegrocery.onrender.com/uploads/${product.image}` : 'path_to_default_image';
   },
   formatDateTime(dateTimeString) {
   const optionsDate = { day: '2-digit', month: '2-digit', year: 'numeric' };
