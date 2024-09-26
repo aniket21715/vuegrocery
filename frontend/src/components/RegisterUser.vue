@@ -63,7 +63,7 @@ export default {
     async register() {
       try {
         // Send registration request to the Flask backend using fetch
-        const response = await fetch('http://localhost:5000/register', {
+        const response = await fetch('https://vuegrocery.onrender.com/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
