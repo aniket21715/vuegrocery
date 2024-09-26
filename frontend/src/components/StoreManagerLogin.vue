@@ -86,7 +86,7 @@ export default {
   methods: {
     async login() {
   try {
-    const response = await fetch('http://localhost:5000/store-manager/login', {
+    const response = await fetch('https://vuegrocery.onrender.com/store-manager/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
