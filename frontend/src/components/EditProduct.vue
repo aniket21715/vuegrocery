@@ -119,7 +119,7 @@ export default {
   },
   methods: {
     getImagePath(product) {
-      return `http://localhost:5000/${product.image}`;
+      return `https://vuegrocery.onrender.com/${product.image}`;
     },
     handleImageUpload(product, event) {
       if (event && event.target && event.target.files) {
@@ -130,7 +130,7 @@ export default {
 
     async fetchProductDetails() {
       try {
-        const response = await fetch(`http://localhost:5000/get-products`, {
+        const response = await fetch(`https://vuegrocery.onrender.com/get-products`, {
           method: "GET",
           headers: {},
         });
@@ -177,7 +177,7 @@ export default {
     ,
 
     fetchCategories() {
-      fetch('http://localhost:5000/get-categories')
+      fetch('https://vuegrocery.onrender.com/get-categories')
         .then(response => response.json())
         .then(data => {
           this.categories = data.categories;
@@ -206,7 +206,7 @@ export default {
           );
         }
         const response = await fetch(
-          `http://localhost:5000/edit-product/${productId}`,
+          `https://vuegrocery.onrender.com/edit-product/${productId}`,
           {
             method: "PUT",
 
