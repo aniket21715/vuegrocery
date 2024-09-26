@@ -94,7 +94,7 @@ export default {
   const accessToken = localStorage.getItem('access_token');
 
   // Make a request to fetch the user's cart data
-  fetch('http://localhost:5000/get-cart', {
+  fetch('https://vuegrocery.onrender.com/get-cart', {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${accessToken}`,
@@ -120,7 +120,7 @@ removeFromCart(cartItemId) {
   const access_token = localStorage.getItem('access_token');
 
   // Make a request to remove the item from the cart
-  fetch(`http://localhost:5000/remove-from-cart/${cartItemId}`, {
+  fetch(`https://vuegrocery.onrender.com/remove-from-cart/${cartItemId}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${access_token}`, // Include the user's authentication token
@@ -143,12 +143,12 @@ removeFromCart(cartItemId) {
 },
 
 getImagePath(product) {
-    return product && product.image ? `http://localhost:5000/uploads/${product.image}` : 'path_to_default_image';
+    return product && product.image ? `https://vuegrocery.onrender.com/uploads/${product.image}` : 'path_to_default_image';
   },
 
   checkout() {
       const access_token = localStorage.getItem('access_token');
-      fetch('http://localhost:5000/checkout', {
+      fetch('https://vuegrocery.onrender.com/checkout', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${access_token}`,
