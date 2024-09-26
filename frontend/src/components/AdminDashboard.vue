@@ -107,7 +107,7 @@
   },
   mounted() {
     // Fetch pending store manager registration requests on component mount
-    fetch('http://localhost:5000/admin/dashboard')
+    fetch('https://vuegrocery.onrender.com/admin/dashboard')
       .then(response => response.json())
       .then(data => {
         this.pendingRequests = data.pendingRequests;
@@ -115,7 +115,7 @@
       .catch(error => console.error('Error:', error));
 
     // Fetch all store manager registration requests on component mount
-    fetch('http://localhost:5000/admin/all-requests')
+    fetch('https://vuegrocery.onrender.com/admin/all-requests')
       .then(response => response.json())
       .then(data => {
         this.allRequests = data.allRequests;
@@ -130,7 +130,7 @@
   
     fetchPendingRequests() {
       // Fetch pending store manager registration requests
-      fetch('http://localhost:5000/admin/dashboard')
+      fetch('https://vuegrocery.onrender.com/admin/dashboard')
         .then(response => response.json())
         .then(data => {
           this.pendingRequests = data.pendingRequests;
@@ -139,7 +139,7 @@
     },
     approveRequest(requestId) {
       // Send request to approve the store manager registration
-      fetch(`http://localhost:5000/admin/approve-store-manager/${requestId}`, {
+      fetch(`https://vuegrocery.onrender.com/admin/approve-store-manager/${requestId}`, {
         method: 'PUT',
       })
         .then(response => response.json())
@@ -152,7 +152,7 @@
     },
     rejectRequest(requestId) {
       // Send request to reject the store manager registration
-      fetch(`http://localhost:5000/admin/reject-store-manager/${requestId}`, {
+      fetch(`https://vuegrocery.onrender.com/admin/reject-store-manager/${requestId}`, {
         method: 'PUT',
       })
         .then(response => response.json())
@@ -165,7 +165,7 @@
     },
     fetchAllRequests() {
       // Fetch all store manager registration requests
-      fetch('http://localhost:5000/admin/all-requests')
+      fetch('https://vuegrocery.onrender.com/admin/all-requests')
         .then(response => response.json())
         .then(data => {
           this.allRequests = data.allRequests;
@@ -179,7 +179,7 @@
 
     fetchCategories() {
       // Fetch categories from the backend
-      fetch('http://localhost:5000/get-categories')
+      fetch('https://vuegrocery.onrender.com/get-categories')
         .then(response => response.json())
         .then(data => {
           console.log(data);
@@ -194,7 +194,7 @@
 
       if (newName !== null && newDescription !== null) {
         // Make a PUT request to update the category
-        fetch(`http://localhost:5000/edit-category/${category.id}`, {
+        fetch(`https://vuegrocery.onrender.com/edit-category/${category.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -218,7 +218,7 @@
       
       if (confirmDelete) {
         // Make a DELETE request to remove the category
-        fetch(`http://localhost:5000/delete-category/${categoryId}`, {
+        fetch(`https://vuegrocery.onrender.com/delete-category/${categoryId}`, {
           method: 'DELETE',
         })
           .then(response => response.json())
@@ -232,7 +232,7 @@
     },
     fetchCategoryRequests() {
     // Fetch category requests from the backend
-    fetch('http://localhost:5000/admin/category-requests')
+    fetch('https://vuegrocery.onrender.com/admin/category-requests')
       .then(response => response.json())
       .then(data => {
         console.log("Category Requests:", data.categoryRequests);
@@ -241,7 +241,7 @@
       .catch(error => console.error('Error:', error));
   },
   approveCategoryRequest(requestId) {
-    fetch(`http://localhost:5000/admin/approve-category-request/${requestId}`, {
+    fetch(`https://vuegrocery.onrender.com/admin/approve-category-request/${requestId}`, {
       method: 'PUT',
     })
       .then(response => response.json())
@@ -254,7 +254,7 @@
   },
 
   rejectCategoryRequest(requestId) {
-    fetch(`http://localhost:5000/admin/reject-category-request/${requestId}`, {
+    fetch(`https://vuegrocery.onrender.com/admin/reject-category-request/${requestId}`, {
       method: 'PUT',
     })
       .then(response => response.json())
@@ -267,7 +267,7 @@
   },
   async fetchMessages() {
       try {
-        const response = await fetch('http://localhost:5000/get-messages', {
+        const response = await fetch('https://vuegrocery.onrender.com/get-messages', {
           method: 'GET',
           headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('access_token'), // Assuming you handle authentication with JWT
@@ -287,7 +287,7 @@
     
     markAsRead(messageId) {
   // Make a request to mark the message as read
-  fetch(`http://localhost:5000/mark-as-read/${messageId}`, {
+  fetch(`https://vuegrocery.onrender.com/mark-as-read/${messageId}`, {
     method: 'PUT',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
