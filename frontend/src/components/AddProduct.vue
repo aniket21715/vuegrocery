@@ -85,7 +85,7 @@ export default {
     methods: {
         fetchCategories() {
             // Fetch categories from the backend
-            fetch('http://localhost:5000/get-categories')
+            fetch('https://vuegrocery.onrender.com/get-categories')
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
@@ -108,7 +108,7 @@ export default {
                     formData.append('image', this.product.image, this.product.image.name);
                 }
 
-                const response = await fetch('http://localhost:5000/add-product', {
+                const response = await fetch('https://vuegrocery.onrender.com/add-product', {
                     method: 'POST',
                     body: formData,
                 });
