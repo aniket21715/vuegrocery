@@ -57,7 +57,7 @@
     methods: {
       async fetchUserDetails() {
         try {
-          const response = await fetch('http://localhost:5000/get-user-details', {
+          const response = await fetch('https://vuegrocery.onrender.com/get-user-details', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
@@ -76,7 +76,7 @@
       },
       async editProfile() {
         try {
-          const response = await fetch('http://localhost:5000/edit-user-details', {
+          const response = await fetch('https://vuegrocery.onrender.com/edit-user-details', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
