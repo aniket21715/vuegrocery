@@ -172,7 +172,7 @@ export default {
   methods: {
     async fetchProducts() {
   try {
-    const response = await fetch('http://localhost:5000/get-products');
+    const response = await fetch('https://vuegrocery.onrender.com/get-products');
     if (response.ok) {
       const data = await response.json();
         const { products } = data; // Destructure the products array from the response
@@ -186,7 +186,7 @@ export default {
   },
     // Create a method to get the absolute path of the image
     getImagePath(product) {
-  return `http://localhost:5000//${product.image}`;
+  return `https://vuegrocery.onrender.com//${product.image}`;
 },
 
     goToAddProduct() {
@@ -204,7 +204,7 @@ async deleteProduct(productId) {
       if (confirmDelete) {
         try {
           // Make a DELETE request to remove the product
-          const response = await fetch(`http://localhost:5000/delete-product/${productId}`, {
+          const response = await fetch(`https://vuegrocery.onrender.com/delete-product/${productId}`, {
             method: 'DELETE',
           });
 
@@ -225,7 +225,7 @@ async deleteProduct(productId) {
         const formdata =new FormData();
         formdata.append('category_name', this.categoryName)
         formdata.append('description', this.description)
-        const response = await fetch('http://localhost:5000/store-manager/request-category', {
+        const response = await fetch('https://vuegrocery.onrender.com/store-manager/request-category', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -252,7 +252,7 @@ async deleteProduct(productId) {
     },
     async exportProductsCSV() {
     try {
-      const response = await fetch('http://localhost:5000/export-products-csv', {
+      const response = await fetch('https://vuegrocery.onrender.com/export-products-csv', {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
@@ -281,7 +281,7 @@ async deleteProduct(productId) {
   },
   async sendMessage() {
       try {
-        const response = await fetch('http://localhost:5000/send-message', {
+        const response = await fetch('https://vuegrocery.onrender.com/send-message', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -308,7 +308,7 @@ async deleteProduct(productId) {
     async fetchProductStocks() {
   try {
     // Fetch product stocks data
-    const response = await fetch('http://localhost:5000/get-products');
+    const response = await fetch('https://vuegrocery.onrender.com/get-products');
     if (response.ok) {
       const data = await response.json();
       const productStocks = data.products.map(product => ({
