@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     addCategory() {
-      fetch('http://localhost:5000/add-category', {
+      fetch('https://vuegrocery.onrender.com/add-category', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
