@@ -99,7 +99,7 @@ export default {
   methods: {
     async fetchProducts() {
     try {
-      const response = await fetch('http://localhost:5000/get-products');
+      const response = await fetch('https://vuegrocery.onrender.com/get-products');
       if (response.ok) {
         const data = await response.json();
         const { products } = data; // Destructure the products array from the response
@@ -113,7 +113,7 @@ export default {
   },
     // Create a method to get the absolute path of the image
     getImagePath(product) {
-  return `http://localhost:5000//${product.image}`;
+  return `https://vuegrocery.onrender.com//${product.image}`;
 },
 addToCart(product) {
   const accessToken = localStorage.getItem('access_token');
@@ -133,7 +133,7 @@ addToCart(product) {
   };
 
   // Make a request to add the product to the cart
-  fetch(`http://localhost:5000/add-to-cart/${product.id}`, {
+  fetch(`https://vuegrocery.onrender.com/add-to-cart/${product.id}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ performSearch(query) {
 
   async fetchFeedback() {
       try {
-        const response = await fetch('http://localhost:5000/get-feedback');
+        const response = await fetch('https://vuegrocery.onrender.com/get-feedback');
         if (response.ok) {
           const data = await response.json();
           this.feedbackList = data.feedback_list;
