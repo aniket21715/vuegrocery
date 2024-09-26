@@ -47,3 +47,4 @@ Flask-Caching
 Celery
 pandas
 Flask-Mail
+redis
