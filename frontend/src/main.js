@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faFacebook, faGoogle, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap';
 import '@mdi/font/css/materialdesignicons.css';
 library.add(faFacebook, faGoogle, faInstagram);
 
