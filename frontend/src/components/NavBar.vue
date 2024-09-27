@@ -36,7 +36,7 @@
           <li class="nav-item">
             <router-link to="/AdminLogin" class="nav-link">Admin</router-link>
           </li>
-          <div class="collapse navbar-collapse" id="navbarNavLightDropdown">
+         <div class="collapse navbar-collapse" id="navbarNavLightDropdown">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
@@ -44,16 +44,17 @@
                   Manager
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                  <li class="nav-item">
-                    <router-link to="/StoreManagerRegister" class="nav-link">Manager Signup</router-link>
+                  <li>
+                    <router-link to="/StoreManagerRegister" class="dropdown-item">Manager Signup</router-link>
                   </li>
-                  <li class="nav-item">
-                    <router-link to="/StoreManagerLogin" class="nav-link">Manager Login</router-link>
+                  <li>
+                    <router-link to="/StoreManagerLogin" class="dropdown-item">Manager Login</router-link>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
+
           
           <li class="nav-item">
             <router-link to="/CartPage" class="nav-link">
